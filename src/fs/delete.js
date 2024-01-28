@@ -1,10 +1,10 @@
 import { access, unlink } from 'fs/promises';
-import { __dirName } from './utils.js';
+import { __dirName, SOURCE_FOLDER } from './constants.js';
 
-const FILE_TO_DELETE = 'files/fileToRemove.txt';
+const FILE_TO_DELETE = 'fileToRemove.txt';
 const ERROR_MSG = 'FS operation failed';
 
-const file_path = __dirName + '/' + FILE_TO_DELETE;
+const file_path = `${__dirName}/${SOURCE_FOLDER}/${FILE_TO_DELETE}`;
 
 const remove = async () => {
     try {

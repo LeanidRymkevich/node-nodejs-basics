@@ -1,11 +1,11 @@
 import { access, writeFile } from 'fs/promises';
-import { __dirName } from './utils.js';
+import { __dirName, SOURCE_FOLDER } from './constants.js';
 
-const DESTINATION_PATH = 'files/fresh.txt';
+const DESTINATION_FILE = 'fresh.txt';
 const TEXT_TO_WRITE = 'I am fresh and young';
 const FILE_EXISTS_ERROR_MSG = 'FS operation failed';
 
-const path = __dirName + '/' + DESTINATION_PATH;
+const path = `${__dirName}/${SOURCE_FOLDER}/${DESTINATION_FILE}`
 
 const create = async () => {
     let exists = true;

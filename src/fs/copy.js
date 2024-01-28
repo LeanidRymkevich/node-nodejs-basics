@@ -1,12 +1,11 @@
 import { access, readdir, mkdir, copyFile } from 'fs/promises';
-import { __dirName } from './utils.js';
+import { __dirName, SOURCE_FOLDER } from './constants.js';
 
-const SOURCE_FOLDER = 'files';
-const DESTINATION_FOLDER = 'files_copy';
 const ERROR_MSG = 'FS operation failed';
 
-const source_path = __dirName + '/' + SOURCE_FOLDER;
-const destination_path = __dirName + '/' + DESTINATION_FOLDER;
+const destination_folder = `${SOURCE_FOLDER}_copy`;
+const source_path = `${__dirName}/${SOURCE_FOLDER}`;
+const destination_path =`${__dirName}/${destination_folder}`;
 
 const copy = async () => {
     let fileNames;
