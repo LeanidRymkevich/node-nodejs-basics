@@ -1,7 +1,5 @@
 import { readdir } from 'fs/promises';
-import { __dirName, SOURCE_FOLDER } from './constants.js';
-
-const ERROR_MSG = 'FS operation failed';
+import { __dirName, SOURCE_FOLDER, ERROR_MSG } from './constants.js';
 
 const source_path = `${__dirName}/${SOURCE_FOLDER}`;
 

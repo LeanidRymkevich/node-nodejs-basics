@@ -1,9 +1,8 @@
 import * as fs from 'fs/promises';
-import { __dirName, SOURCE_FOLDER } from './constants.js';
+import { __dirName, SOURCE_FOLDER, ERROR_MSG } from './constants.js';
 
 const SOURCE_FILE = 'wrongFilename.txt';
 const RENAMED_FILE = 'properFilename.md';
-const ERROR_MSG = 'FS operation failed';
 
 const source_path = `${__dirName}/${SOURCE_FOLDER}/${SOURCE_FILE}`;
 const renamed_path = `${__dirName}/${SOURCE_FOLDER}/${RENAMED_FILE}`;
