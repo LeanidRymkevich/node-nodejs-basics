@@ -1,13 +1,10 @@
 import { access, writeFile } from 'fs/promises';
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { __dirName } from './utils.js';
 
 const DESTINATION_PATH = 'files/fresh.txt';
 const TEXT_TO_WRITE = 'I am fresh and young';
 const FILE_EXISTS_ERROR_MSG = 'FS operation failed';
 
-const fileName = fileURLToPath(import.meta.url);
-const __dirName = dirname(fileName);
 const path = __dirName + '/' + DESTINATION_PATH;
 
 const create = async () => {
