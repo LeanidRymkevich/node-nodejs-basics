@@ -1,5 +1,28 @@
+import * as fs from 'fs/promises';
+import { __dirName, SOURCE_FOLDER, ERROR_MSG } from './constants.js';
+
+const SOURCE_FILE = 'wrongFilename.txt';
+const RENAMED_FILE = 'properFilename.md';
+
+const source_path = `${__dirName}/${SOURCE_FOLDER}/${SOURCE_FILE}`;
+const renamed_path = `${__dirName}/${SOURCE_FOLDER}/${RENAMED_FILE}`;
+
 const rename = async () => {
-    // Write your code here 
+    try {
+        await fs.access(source_path);
+    } catch {
+        throw new Error(ERROR_MSG);
+    }
+
+    let hasToBeThrown = true;
+    try {
+        await fs.access(renamed_path);
+    } catch {
+        hasToBeThrown = false;
+    }
+    if (hasToBeThrown) throw new Error(ERROR_MSG);
+
+    await fs.rename(source_path, renamed_path);
 };
 
 await rename();
